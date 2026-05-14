@@ -55,9 +55,9 @@ class User(UserMixin, db.Model):
 class BlogPost(db.Model):
     __tablename__ = "blog_posts"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
-    subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
-    date: Mapped[str] = mapped_column(String(250), nullable=False)
+    title: Mapped[str] = mapped_column(String(), unique=True, nullable=False)
+    subtitle: Mapped[str] = mapped_column(String(), nullable=False)
+    date: Mapped[str] = mapped_column(String(), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
     author_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"))
     author: Mapped["User"] = relationship(back_populates="blog_posts")

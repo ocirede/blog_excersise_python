@@ -1,2 +1,2 @@
 .env
-posts.db
+instance/posts.db
